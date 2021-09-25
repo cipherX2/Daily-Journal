@@ -42,6 +42,10 @@ app.get('/compose', function (req, res) {
   res.render('compose');
 });
 
+app.get('/posts/:route', function (req, res) {
+  console.log(req.params.route);
+});
+
 app.post('/compose', function (req, res) {
   let postData = {
     composeTitle: req.body.postTitle,
