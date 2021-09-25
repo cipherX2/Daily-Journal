@@ -3,8 +3,15 @@
     <h1>Compose</h1>
 
     <form action="/compose" method="post">
-        <input type="text" name="composeText">
-        <button type="submit">Submit</button>
+        <div class="form-group">
+            <label for="exampleInputTitle">Title</label>
+            <input type="text" class="form-control" id="exampleInputTitle1" placeholder="Enter Title" autocomplete="off" name="postTitle">
+        </div><br><br>
+        <div class="form-group">
+            <label for="floatingTextarea">Comments</label>
+            <textarea class="form-control" placeholder="Enter your text" rows="10" id="floatingTextarea" autocomplete="off" name="postText"></textarea>
+          </div>
+        <button type="submit" class="btn btn-outline-success">Submit</button>
     </form>
 
-<%- include('partials/footer'); %>
+    <%- include('partials/footer'); %>

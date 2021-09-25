@@ -20,12 +20,15 @@
 }
 
 .footer {
-	position: absolute;
-	text-align: center;
-	bottom: 0;
-	width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
 	height: 60px;
 	background-color: #1abc9c;
+    text-align: center;
 }
 
 .footer p {

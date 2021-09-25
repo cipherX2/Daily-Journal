@@ -17,9 +17,12 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
+let postContent = [];
+
 app.get('/', function (req, res) {
   res.render('home', {
-    homeContent: homeStartingContent
+    homeContent: homeStartingContent,
+    posts: postContent
   });
 });
 
@@ -35,18 +38,18 @@ app.get('/contact', function (req, res) {
   });
 });
 
-app.get('/compose',function (req,res) {
+app.get('/compose', function (req, res) {
   res.render('compose');
 });
 
-app.post('/compose',function (req,res) {
-  console.log(req.body.composeText);
+app.post('/compose', function (req, res) {
+  let postData = {
+    composeTitle: req.body.postTitle,
+    composeData: req.body.postText
+  };
+  postContent.push(postData);
+  res.redirect('/');
 });
-
-
-
-
-
 
 app.listen(3000, function () {
   console.log("Server started on port 3000");

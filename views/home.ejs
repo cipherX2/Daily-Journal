@@ -4,4 +4,10 @@
 
 <p><%= homeContent %></p>
 
+
+<% posts.forEach(element => { %>
+  <h1><%= element.composeTitle %></h1>
+  <p><%= element.composeData %></p>
+<% }); %>
+
 <%- include('partials/footer'); %>
