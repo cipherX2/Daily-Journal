@@ -48,8 +48,12 @@ app.get('/posts/:route', function (req, res) {
   for(let i=0; i<postContent.length; i++){
     let routeData = _.lowerCase(req.params.route);
     let  homeTitle = _.lowerCase(postContent[i].composeTitle);
+    let routeContent = postContent[i].composeData;
     if(routeData === homeTitle){
-      console.log("Match Found");
+      res.render('post',{
+        postPageTitle : homeTitle,
+        postPageContent : routeContent
+      });
     }
   }
 });
